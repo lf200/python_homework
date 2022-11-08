@@ -1,17 +1,17 @@
-n = int(input())
-f = open("hamlet.txt", "r")
-txt = f.read()
-txt = txt.lower()
-for i in '!"#$%&()*+,-./:;<=>?@[\\]^_‘{|}~':
-    txt = txt.replace(i, " ")
-words = txt.split()
+def getText():
+    txt = open("hamlet.txt", "r").read()
+    txt = txt.lower()
+    for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_‘{|}~':
+        txt = txt.replace(ch, " ")   #将文本中特殊字符替换为空格
+    return txt
+hamletTxt = getText()
+words = hamletTxt.split()
 counts = {}
 for word in words:
-    counts[word] = counts.get(word, 0)+1
+    counts[word] = counts.get(word, 0) + 1
 items = list(counts.items())
-items.sort(key=lambda x: x[1], reverse=True)
+items.sort(key=lambda x:x[1], reverse=True)
+n = eval(input())
 for i in range(n):
     word, count = items[i]
-    print("{:<10}{:>5}".format(word, count))
-f.close()
-
+    print("{0:<10}{1:>5}".format(word, count))
