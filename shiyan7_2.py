@@ -1,7 +1,7 @@
-w1 = open('src.txt', 'r')
-w2 = open('dest.txt', 'w')
-for line in w1:
-    w2.write(line.lower())
-
-w1.close()
-w2.close()
+fd = open("sensor-data-1k.txt", "r")
+avg, cnt = 0, 0
+for line in fd:
+    ls = line.split()
+    cnt += 1
+    avg += eval(ls[4])
+print("{:.2f}".format(avg/cnt))
