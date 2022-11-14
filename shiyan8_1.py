@@ -6,7 +6,7 @@ def main():
     y = np.array([[5.], [7.]])
     print(a)
     print(a.T)
-    b=np.eye(2)
+    b = np.eye(2)
     print(b)
     print(b.trace())
     print(np.linalg.solve(a,y))
