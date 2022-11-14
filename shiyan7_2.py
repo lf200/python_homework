@@ -5,3 +5,4 @@ for line in fd:
     cnt += 1
     avg += eval(ls[4])
 print("{:.2f}".format(avg/cnt))
+
